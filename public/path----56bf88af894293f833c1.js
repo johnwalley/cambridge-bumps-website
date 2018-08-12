@@ -1,2 +1,0 @@
-webpackJsonp([60335399758886],{114:function(e,s){e.exports={data:{allResultsJson:{edges:[{node:{fields:{slug:"Town/Men"}}},{node:{fields:{slug:"Lents/Men"}}},{node:{fields:{slug:"Mays/Men"}}},{node:{fields:{slug:"Torpids/Men"}}},{node:{fields:{slug:"Eights/Men"}}},{node:{fields:{slug:"Town/Women"}}},{node:{fields:{slug:"Lents/Women"}}},{node:{fields:{slug:"Mays/Women"}}},{node:{fields:{slug:"Torpids/Women"}}},{node:{fields:{slug:"Eights/Women"}}}]}},layoutContext:{}}}});
-//# sourceMappingURL=path----56bf88af894293f833c1.js.map
