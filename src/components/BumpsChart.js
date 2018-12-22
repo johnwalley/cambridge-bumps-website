@@ -16,7 +16,7 @@ const widthOfOneYear = 110;
 class BumpsChart extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { endYear: null };
+    this.state = { startYear: null };
     this.bumpsChart = null;
   }
 
@@ -26,17 +26,15 @@ class BumpsChart extends React.Component {
       Math.ceil((this.props.width - 310) / widthOfOneYear)
     );
 
-    this.setState({ endYear: this.props.data.endYear });
+    this.setState({ startYear: this.props.data.startYear });
 
-    const year = {
-      start: this.props.data.endYear - numYearsToView,
-      end: this.props.data.endYear,
-    };
+    const year = this.props.data.startYear;
 
     this.chart = bumpsChart()
       .year(year)
+      .numYearsToView(numYearsToView)
       .windowWidth(this.props.width)
-      .on('selectYear', (start, end) => this.setState({ endYear: end }));
+      .on('selectYear', (start, end) => this.setState({ startYear: start }));
 
     select(this.bumpsChart)
       .datum(this.props.data)
@@ -49,12 +47,12 @@ class BumpsChart extends React.Component {
       Math.ceil((this.props.width - 310) / widthOfOneYear)
     );
 
-    const year = {
-      start: this.state.endYear - numYearsToView,
-      end: this.state.endYear,
-    };
+    const year = this.state.startYear;
 
-    this.chart.year(year).windowWidth(this.props.width);
+    this.chart
+      .year(year)
+      .numYearsToView(numYearsToView)
+      .windowWidth(this.props.width);
 
     select(this.bumpsChart)
       .datum(this.props.data)
@@ -63,7 +61,7 @@ class BumpsChart extends React.Component {
 
   render() {
     return (
-      <Chart className="bumpsChart" innerRef={el => (this.bumpsChart = el)}>
+      <Chart className="bumpsChart" ref={el => (this.bumpsChart = el)}>
         <svg width="100%" preserveAspectRatio="xMidYMin" />
       </Chart>
     );

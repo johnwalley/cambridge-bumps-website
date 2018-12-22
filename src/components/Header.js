@@ -75,7 +75,7 @@ class Header extends React.Component {
                 </HeaderLink>
                 <DropdownMenu right>
                   {this.props.data.allResultsJson.edges.map(({ node }) => (
-                    <DropdownItem key={node.id}>
+                    <DropdownItem key={node.fields.slug}>
                       <Link to={'/' + node.fields.slug}>
                         <ChartLink>{node.fields.slug}</ChartLink>
                       </Link>
