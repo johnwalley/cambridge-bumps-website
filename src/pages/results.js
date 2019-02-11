@@ -61,7 +61,7 @@ const ResultsPage = ({ data }) => {
                 <h2>May Bumps</h2>
               </CardHeader>
               <CardBody>
-                <CardTitle>1992 - 2018</CardTitle>
+                <CardTitle>1980 - 2018</CardTitle>
 
                 <ButtonGroup>
                   <StyledButton
@@ -86,7 +86,7 @@ const ResultsPage = ({ data }) => {
                 <h2>Lent Bumps</h2>
               </CardHeader>
               <CardBody>
-                <CardTitle>1964 - 2018</CardTitle>
+                <CardTitle>1950 - 2018</CardTitle>
                 <ButtonGroup>
                   <StyledButton
                     color="primary"
@@ -134,7 +134,7 @@ const ResultsPage = ({ data }) => {
                 <h2>Summer Eights</h2>
               </CardHeader>
               <CardBody>
-                <CardTitle>1900 - 2018</CardTitle>
+                <CardTitle>1892 - 2018</CardTitle>
                 <ButtonGroup>
                   <StyledButton
                     color="primary"
