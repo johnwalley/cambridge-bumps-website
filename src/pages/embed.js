@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import 'url-search-params-polyfill';
 import Layout from '../components/embed';
 
 const Content = styled.div`

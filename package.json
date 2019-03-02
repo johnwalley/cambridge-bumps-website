@@ -21,7 +21,8 @@
     "react-helmet": "5",
     "react-sizes": "1",
     "reactstrap": "6",
-    "styled-components": "4"
+    "styled-components": "4",
+    "url-search-params-polyfill": "^5.0.0"
   },
   "keywords": [
     "gatsby"
