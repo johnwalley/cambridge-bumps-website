@@ -26,7 +26,7 @@ class BumpsChart extends React.Component {
       Math.ceil((this.props.width - 310) / widthOfOneYear)
     );
 
-    this.setState({ startYear: this.props.data.startYear });
+    this.setState({ startYear: this.props.data.endYear - numYearsToView + 1 });
 
     const year = this.props.data.startYear;
 
