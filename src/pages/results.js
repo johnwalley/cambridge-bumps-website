@@ -134,7 +134,7 @@ const ResultsPage = ({ data }) => {
                 <h2>Summer Eights</h2>
               </CardHeader>
               <CardBody>
-                <CardTitle>1892 - 2018</CardTitle>
+                <CardTitle>1892 - 2019</CardTitle>
                 <ButtonGroup>
                   <StyledButton
                     color="primary"
