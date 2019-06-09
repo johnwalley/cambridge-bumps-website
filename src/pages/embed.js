@@ -18,7 +18,7 @@ const EmbedPage = ({ location }) => {
 
   const data = useStaticQuery(graphql`
     query {
-      allResultsJson {
+      allLatestJson {
         edges {
           node {
             set
@@ -59,7 +59,7 @@ const EmbedPage = ({ location }) => {
     }
   `);
 
-  const singleSetData = data.allResultsJson.edges.find(
+  const singleSetData = data.allLatestJson.edges.find(
     edge =>
       edge.node.small.toLowerCase() === set &&
       edge.node.gender.toLowerCase() === gender
