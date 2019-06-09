@@ -11,7 +11,7 @@ const Description = styled.h3`
   text-align: center;
 `;
 
-export default ({ data, onDecrementYear, onIncrementYear }) => {
+export default ({ data }) => {
   return (
     <Layout>
       <>
@@ -27,7 +27,7 @@ export default ({ data, onDecrementYear, onIncrementYear }) => {
 };
 
 export const query = graphql`
-  query ($slug: String!) {
+  query($slug: String!) {
     resultsJson(fields: { slug: { eq: $slug } }) {
       set
       gender

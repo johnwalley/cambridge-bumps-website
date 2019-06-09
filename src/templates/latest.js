@@ -11,9 +11,7 @@ const Description = styled.h3`
   text-align: center;
 `;
 
-export default ({ data, onDecrementYear, onIncrementYear }) => {
-  console.log(data);
-
+export default ({ data }) => {
   return (
     <Layout>
       <>
