@@ -37,17 +37,17 @@ const ResultsPage = ({ data }) => {
                 <h2>Town Bumps</h2>
               </CardHeader>
               <CardBody>
-                <CardTitle>1950 - 2018</CardTitle>
+                <CardTitle>2018</CardTitle>
                 <ButtonGroup>
                   <StyledButton
                     color="primary"
-                    onClick={() => navigate('/history/town/women')}
+                    onClick={() => navigate('/latest/town/women')}
                   >
                     Women
                   </StyledButton>
                   <StyledButton
                     color="primary"
-                    onClick={() => navigate('/history/town/men')}
+                    onClick={() => navigate('/latest/town/men')}
                   >
                     Men
                   </StyledButton>
@@ -61,18 +61,18 @@ const ResultsPage = ({ data }) => {
                 <h2>May Bumps</h2>
               </CardHeader>
               <CardBody>
-                <CardTitle>1980 - 2018</CardTitle>
+                <CardTitle>2018</CardTitle>
 
                 <ButtonGroup>
                   <StyledButton
                     color="primary"
-                    onClick={() => navigate('/history/mays/women')}
+                    onClick={() => navigate('/latest/mays/women')}
                   >
                     Women
                   </StyledButton>
                   <StyledButton
                     color="primary"
-                    onClick={() => navigate('/history/mays/men')}
+                    onClick={() => navigate('/latest/mays/men')}
                   >
                     Men
                   </StyledButton>
@@ -86,17 +86,17 @@ const ResultsPage = ({ data }) => {
                 <h2>Lent Bumps</h2>
               </CardHeader>
               <CardBody>
-                <CardTitle>1950 - 2019</CardTitle>
+                <CardTitle>2019</CardTitle>
                 <ButtonGroup>
                   <StyledButton
                     color="primary"
-                    onClick={() => navigate('/history/lents/women')}
+                    onClick={() => navigate('/latest/lents/women')}
                   >
                     Women
                   </StyledButton>
                   <StyledButton
                     color="primary"
-                    onClick={() => navigate('/history/lents/men')}
+                    onClick={() => navigate('/latest/lents/men')}
                   >
                     Men
                   </StyledButton>
@@ -110,17 +110,17 @@ const ResultsPage = ({ data }) => {
                 <h2>Torpids</h2>
               </CardHeader>
               <CardBody>
-                <CardTitle>1900 - 2019</CardTitle>
+                <CardTitle>2019</CardTitle>
                 <ButtonGroup>
                   <StyledButton
                     color="primary"
-                    onClick={() => navigate('/history/torpids/women')}
+                    onClick={() => navigate('/latest/torpids/women')}
                   >
                     Women
                   </StyledButton>
                   <StyledButton
                     color="primary"
-                    onClick={() => navigate('/history/torpids/men')}
+                    onClick={() => navigate('/latest/torpids/men')}
                   >
                     Men
                   </StyledButton>
@@ -134,17 +134,17 @@ const ResultsPage = ({ data }) => {
                 <h2>Summer Eights</h2>
               </CardHeader>
               <CardBody>
-                <CardTitle>1892 - 2019</CardTitle>
+                <CardTitle>2019</CardTitle>
                 <ButtonGroup>
                   <StyledButton
                     color="primary"
-                    onClick={() => navigate('/history/eights/women')}
+                    onClick={() => navigate('/latest/eights/women')}
                   >
                     Women
                   </StyledButton>
                   <StyledButton
                     color="primary"
-                    onClick={() => navigate('/history/eights/men')}
+                    onClick={() => navigate('/latest/eights/men')}
                   >
                     Men
                   </StyledButton>
@@ -161,7 +161,7 @@ const ResultsPage = ({ data }) => {
 export default ResultsPage;
 
 export const query = graphql`
-  query IndexQuery {
+  query LatestQuery {
     allResultsJson {
       edges {
         node {

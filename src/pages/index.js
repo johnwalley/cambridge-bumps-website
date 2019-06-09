@@ -27,6 +27,22 @@ const IndexPage = ({ data }) => {
         <CardDeck>
           <Card className="text-center">
             <CardHeader>
+              <h2>Looking for the latest results?</h2>
+            </CardHeader>
+            <CardBody>
+              <CardText>Live and most recent results</CardText>
+              <StyledButton
+                color="primary"
+                onClick={() => navigate('/latest/')}
+                outline
+                block
+              >
+                Latest Results
+              </StyledButton>
+            </CardBody>
+          </Card>
+          <Card className="text-center">
+            <CardHeader>
               <h2>New to Bumps?</h2>
             </CardHeader>
             <CardBody>
@@ -43,20 +59,20 @@ const IndexPage = ({ data }) => {
           </Card>
           <Card className="text-center">
             <CardHeader>
-              <h2>Looking for Results?</h2>
+              <h2>Looking for historical results?</h2>
             </CardHeader>
 
             <CardBody>
               <CardText>
-                Look up the most recent results or take a trip back in time with
-                historical results going back to the 1950s
+                Take a trip back in time with historical results going back to
+                the 1950s
               </CardText>
               <StyledButton
                 color="primary"
                 onClick={() => navigate('/results/')}
                 block
               >
-                Bumps Charts
+                Historical Bumps Charts
               </StyledButton>
             </CardBody>
           </Card>

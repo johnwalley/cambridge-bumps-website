@@ -70,13 +70,29 @@ class Header extends React.Component {
               <UncontrolledDropdown nav inNavbar>
                 <HeaderLink>
                   <DropdownToggle nav caret>
-                    Bumps Charts
+                    Latest Results
                   </DropdownToggle>
                 </HeaderLink>
                 <DropdownMenu right>
                   {this.props.data.allResultsJson.edges.map(({ node }) => (
                     <DropdownItem key={node.fields.slug}>
-                      <Link to={'/' + node.fields.slug}>
+                      <Link to={'/latest/' + node.fields.slug}>
+                        <ChartLink>{node.fields.slug}</ChartLink>
+                      </Link>
+                    </DropdownItem>
+                  ))}
+                </DropdownMenu>
+              </UncontrolledDropdown>
+              <UncontrolledDropdown nav inNavbar>
+                <HeaderLink>
+                  <DropdownToggle nav caret>
+                    Historical Bumps Charts
+                  </DropdownToggle>
+                </HeaderLink>
+                <DropdownMenu right>
+                  {this.props.data.allResultsJson.edges.map(({ node }) => (
+                    <DropdownItem key={node.fields.slug}>
+                      <Link to={'/history/' + node.fields.slug}>
                         <ChartLink>{node.fields.slug}</ChartLink>
                       </Link>
                     </DropdownItem>

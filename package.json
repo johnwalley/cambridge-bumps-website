@@ -1,32 +1,37 @@
 {
-  "name": "cambridge-bumps",
+  "name": "cambridge-bumps-website",
   "description": "Cambridge Bumps",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "John Walley <john@walley.org.uk>",
   "dependencies": {
     "babel-plugin-styled-components": "1",
-    "bootstrap": "^4.1.2",
+    "bootstrap": "^4.3.1",
     "d3-bumps-chart": "1.0.0-beta.1",
     "d3-selection": "1",
     "d3-transition": "1",
-    "gatsby": "2",
-    "gatsby-plugin-google-analytics": "2",
-    "gatsby-plugin-react-helmet": "3",
-    "gatsby-plugin-styled-components": "3",
-    "gatsby-source-filesystem": "2",
-    "gatsby-transformer-json": "2",
-    "pdfkit": "^0.8.3",
-    "react": "16",
-    "react-dom": "16",
-    "react-helmet": "5",
+    "gatsby": "^2.8.6",
+    "gatsby-plugin-google-analytics": "^2.0.20",
+    "gatsby-plugin-react-helmet": "^3.0.12",
+    "gatsby-plugin-styled-components": "^3.0.7",
+    "gatsby-source-filesystem": "^2.0.38",
+    "gatsby-transformer-json": "^2.1.11",
+    "pdfkit": "^0.10.0",
+    "react": "^16.8.6",
+    "react-bumps-chart": "^0.5.2",
+    "react-dom": "^16.8.6",
+    "react-helmet": "^5.2.1",
     "react-sizes": "1",
-    "reactstrap": "6",
-    "styled-components": "4",
-    "url-search-params-polyfill": "^5.0.0"
+    "reactstrap": "8",
+    "styled-components": "^4.3.1",
+    "url-search-params-polyfill": "^5.1.0"
   },
   "keywords": [
-    "gatsby"
+    "rowing"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johnwalley/cambridge-bumps-website.git"
+  },
   "license": "MIT",
   "main": "n/a",
   "scripts": {
@@ -36,6 +41,6 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "prettier": "1.15.3"
+    "prettier": "1.18.2"
   }
 }

@@ -30,8 +30,17 @@ exports.createPages = ({ graphql, actions }) => {
     `).then(result => {
       result.data.allResultsJson.edges.forEach(({ node }) => {
         createPage({
-          path: `${node.fields.slug}`,
+          path: `history/${node.fields.slug}`,
           component: path.resolve(`./src/templates/results.js`),
+          context: {
+            // Data passed to context is available in page queries as GraphQL variables.
+            slug: node.fields.slug,
+          },
+        });
+
+        createPage({
+          path: `latest/${node.fields.slug}`,
+          component: path.resolve(`./src/templates/latest.js`),
           context: {
             // Data passed to context is available in page queries as GraphQL variables.
             slug: node.fields.slug,
