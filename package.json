@@ -17,7 +17,7 @@
     "gatsby-transformer-json": "^2.1.11",
     "pdfkit": "^0.10.0",
     "react": "^16.8.6",
-    "react-bumps-chart": "^0.5.2",
+    "react-bumps-chart": "^0.6.0",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
     "react-sizes": "1",
