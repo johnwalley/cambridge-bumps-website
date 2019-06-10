@@ -2,7 +2,6 @@ import React from 'react';
 import BumpsChart from 'react-bumps-chart';
 
 const SingleYearBumpsChart = ({ data }) => {
-  
   const singleYearData = {
     set: data.set,
     gender: data.gender,
