@@ -14,9 +14,16 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 exports.createPages = ({ graphql, actions }) => {
   const { createPage, createRedirect } = actions;
 
+  // TODO: Add remaining redirects
   createRedirect({
     fromPath: '/mays/men',
     toPath: '/history/mays/men',
+    isPermanent: true,
+    redirectInBrowser: true,
+  });
+  createRedirect({
+    fromPath: '/mays/women',
+    toPath: '/history/mays/women',
     isPermanent: true,
     redirectInBrowser: true,
   });
