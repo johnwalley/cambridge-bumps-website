@@ -29,5 +29,6 @@ module.exports = {
         exclude: [],
       },
     },
+    `gatsby-plugin-netlify`,
   ],
 };

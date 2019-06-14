@@ -12,7 +12,14 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 };
 
 exports.createPages = ({ graphql, actions }) => {
-  const { createPage } = actions;
+  const { createPage, createRedirect } = actions;
+
+  createRedirect({
+    fromPath: '/mays/men',
+    toPath: '/history/mays/men',
+    isPermanent: true,
+    redirectInBrowser: true,
+  });
 
   return new Promise((resolve, reject) => {
     graphql(`
