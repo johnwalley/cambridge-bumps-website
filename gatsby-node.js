@@ -14,7 +14,18 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 exports.createPages = ({ graphql, actions }) => {
   const { createPage, createRedirect } = actions;
 
-  // TODO: Add remaining redirects
+  createRedirect({
+    fromPath: '/town/men',
+    toPath: '/history/town/men',
+    isPermanent: true,
+    redirectInBrowser: true,
+  });
+  createRedirect({
+    fromPath: '/town/women',
+    toPath: '/history/town/women',
+    isPermanent: true,
+    redirectInBrowser: true,
+  });
   createRedirect({
     fromPath: '/mays/men',
     toPath: '/history/mays/men',
@@ -24,6 +35,42 @@ exports.createPages = ({ graphql, actions }) => {
   createRedirect({
     fromPath: '/mays/women',
     toPath: '/history/mays/women',
+    isPermanent: true,
+    redirectInBrowser: true,
+  });
+  createRedirect({
+    fromPath: '/lents/men',
+    toPath: '/history/lents/men',
+    isPermanent: true,
+    redirectInBrowser: true,
+  });
+  createRedirect({
+    fromPath: '/lents/women',
+    toPath: '/history/lents/women',
+    isPermanent: true,
+    redirectInBrowser: true,
+  });
+  createRedirect({
+    fromPath: '/torpids/men',
+    toPath: '/history/torpids/men',
+    isPermanent: true,
+    redirectInBrowser: true,
+  });
+  createRedirect({
+    fromPath: '/torpids/women',
+    toPath: '/history/torpids/women',
+    isPermanent: true,
+    redirectInBrowser: true,
+  });
+  createRedirect({
+    fromPath: '/eights/men',
+    toPath: '/history/eights/men',
+    isPermanent: true,
+    redirectInBrowser: true,
+  });
+  createRedirect({
+    fromPath: '/eights/women',
+    toPath: '/history/eights/women',
     isPermanent: true,
     redirectInBrowser: true,
   });
