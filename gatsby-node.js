@@ -114,6 +114,49 @@ exports.createPages = ({ graphql, actions }) => {
           },
         });
       });
+
+      resolve();
+    });
+
+    graphql(`
+      {
+        allResultsJson {
+          edges {
+            node {
+              fields {
+                slug
+              }
+            }
+          }
+        }
+      }
+    `).then(result => {
+      result.data.allResultsJson.edges.forEach(({ node }) => {
+        createPage({
+          path: `history/${node.fields.slug}`,
+          component: path.resolve(`./src/templates/results.js`),
+          context: {
+            slug: node.fields.slug,
+          },
+        });
+
+        createPage({
+          path: `latest/${node.fields.slug}`,
+          component: path.resolve(`./src/templates/latest.js`),
+          context: {
+            slug: node.fields.slug,
+          },
+        });
+
+        createPage({
+          path: `stats/${node.fields.slug}`,
+          component: path.resolve(`./src/templates/stats.js`),
+          context: {
+            slug: node.fields.slug,
+          },
+        });
+      });
+
       resolve();
     });
   });

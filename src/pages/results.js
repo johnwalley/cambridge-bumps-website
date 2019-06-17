@@ -61,7 +61,7 @@ const ResultsPage = ({ data }) => {
                 <h2>May Bumps</h2>
               </CardHeader>
               <CardBody>
-                <CardTitle>1980 - 2018</CardTitle>
+                <CardTitle>1980 - 2019</CardTitle>
 
                 <ButtonGroup>
                   <StyledButton
