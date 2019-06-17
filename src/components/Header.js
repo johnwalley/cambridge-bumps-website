@@ -86,7 +86,7 @@ class Header extends React.Component {
               <UncontrolledDropdown nav inNavbar>
                 <HeaderLink>
                   <DropdownToggle nav caret>
-                    Historical Bumps Charts
+                    Historical Charts
                   </DropdownToggle>
                 </HeaderLink>
                 <DropdownMenu right>

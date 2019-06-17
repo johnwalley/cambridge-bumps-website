@@ -94,7 +94,6 @@ exports.createPages = ({ graphql, actions }) => {
           path: `history/${node.fields.slug}`,
           component: path.resolve(`./src/templates/results.js`),
           context: {
-            // Data passed to context is available in page queries as GraphQL variables.
             slug: node.fields.slug,
           },
         });
@@ -103,7 +102,14 @@ exports.createPages = ({ graphql, actions }) => {
           path: `latest/${node.fields.slug}`,
           component: path.resolve(`./src/templates/latest.js`),
           context: {
-            // Data passed to context is available in page queries as GraphQL variables.
+            slug: node.fields.slug,
+          },
+        });
+
+        createPage({
+          path: `stats/${node.fields.slug}`,
+          component: path.resolve(`./src/templates/stats.js`),
+          context: {
             slug: node.fields.slug,
           },
         });
