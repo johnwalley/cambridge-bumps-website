@@ -121,38 +121,26 @@ exports.createPages = ({ graphql, actions }) => {
     graphql(`
       {
         allResultsJson {
-          edges {
-            node {
-              fields {
-                slug
+          group(field: small) {
+            field
+            fieldValue
+            totalCount
+            edges {
+              node {
+                set
+                gender
               }
             }
           }
         }
       }
     `).then(result => {
-      result.data.allResultsJson.edges.forEach(({ node }) => {
+      result.data.allResultsJson.group.forEach(({ fieldValue }) => {
         createPage({
-          path: `history/${node.fields.slug}`,
-          component: path.resolve(`./src/templates/results.js`),
+          path: `test/${fieldValue.toLowerCase()}`,
+          component: path.resolve(`./src/templates/test.js`),
           context: {
-            slug: node.fields.slug,
-          },
-        });
-
-        createPage({
-          path: `latest/${node.fields.slug}`,
-          component: path.resolve(`./src/templates/latest.js`),
-          context: {
-            slug: node.fields.slug,
-          },
-        });
-
-        createPage({
-          path: `stats/${node.fields.slug}`,
-          component: path.resolve(`./src/templates/stats.js`),
-          context: {
-            slug: node.fields.slug,
+            small: fieldValue,
           },
         });
       });
