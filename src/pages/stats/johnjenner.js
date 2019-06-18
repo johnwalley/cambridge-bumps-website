@@ -158,7 +158,7 @@ export default ({ data }) => {
 
 export const query = graphql`
   query {
-    allResultsJson {
+    allResultsJson(filter: { small: { eq: "Town" } }) {
       edges {
         node {
           set

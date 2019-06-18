@@ -209,8 +209,8 @@ export default ({ data, pathContext: { small } }) => {
 };
 
 export const query = graphql`
-  query {
-    allResultsJson {
+  query($small: String!) {
+    allResultsJson(filter: { small: { eq: $small } }) {
       edges {
         node {
           set
