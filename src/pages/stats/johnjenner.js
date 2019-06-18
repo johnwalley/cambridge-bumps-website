@@ -105,9 +105,15 @@ export default ({ data }) => {
                 .filter(crew => crew.values[crew.values.length - 1].pos !== -1)
                 .map(crew => ({
                   club: crew.name.replace(/[0-9]+$/, '').trim(),
-                  placesGained:
-                    crew.values[crew.values.length - 5].pos -
-                    crew.values[crew.values.length - 1].pos,
+                  placesGained: sum(
+                    [0, 1, 2, 3].map(d =>
+                      crew.values[crew.values.length - 2 - d].pos === 1 &&
+                      crew.values[crew.values.length - 1 - d].pos == 1
+                        ? 1
+                        : crew.values[crew.values.length - 2 - d].pos -
+                          crew.values[crew.values.length - 1 - d].pos
+                    )
+                  ),
                 }))
             )
           ),
