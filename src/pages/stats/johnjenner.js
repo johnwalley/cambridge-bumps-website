@@ -12,6 +12,7 @@ import {
   groupBy,
   values,
   zip,
+  range,
 } from 'lodash';
 import Blade, { shortShortNames, abbreviations } from 'react-rowing-blades';
 
@@ -78,14 +79,17 @@ export default ({ data }) => {
     return code;
   };
 
-  const getTotalCrews = results => {
+  const getTotalCrews = (results, offset = 0) => {
     return sortBy(
       values(
         groupBy(
           flatten(
             results.map(event =>
               event.crews
-                .filter(crew => crew.values[crew.values.length - 1].pos !== -1)
+                .filter(
+                  crew =>
+                    crew.values[crew.values.length - 1 - offset].pos !== -1
+                )
                 .map(crew => crew.name.replace(/[0-9]+$/, '').trim())
             )
           )
@@ -95,23 +99,27 @@ export default ({ data }) => {
     );
   };
 
-  const getPlacesGained = results => {
+  const getPlacesGained = (results, offset = 0) => {
     return sortBy(
       Object.entries(
         groupBy(
           flatten(
             results.map(event =>
               event.crews
-                .filter(crew => crew.values[crew.values.length - 1].pos !== -1)
+                .filter(
+                  crew =>
+                    crew.values[crew.values.length - 1 - offset].pos !== -1
+                )
                 .map(crew => ({
                   club: crew.name.replace(/[0-9]+$/, '').trim(),
                   placesGained: sum(
                     [0, 1, 2, 3].map(d =>
-                      crew.values[crew.values.length - 2 - d].pos === 1 &&
-                      crew.values[crew.values.length - 1 - d].pos == 1
+                      crew.values[crew.values.length - 2 - d - offset].pos ===
+                        1 &&
+                      crew.values[crew.values.length - 1 - d - offset].pos == 1
                         ? 1
-                        : crew.values[crew.values.length - 2 - d].pos -
-                          crew.values[crew.values.length - 1 - d].pos
+                        : crew.values[crew.values.length - 2 - d - offset].pos -
+                          crew.values[crew.values.length - 1 - d - offset].pos
                     )
                   ),
                 }))
@@ -126,6 +134,42 @@ export default ({ data }) => {
 
   const totalCrews = getTotalCrews(results);
   const placesGained = getPlacesGained(results);
+
+  const NUM_YEARS = 20;
+
+  const totalCrewsHistory = range(NUM_YEARS).map(d =>
+    getTotalCrews(results, d * 5)
+  );
+
+  const placesGainedHisory = range(NUM_YEARS).map(d =>
+    getPlacesGained(results, d * 5)
+  );
+
+  const finalResultsHistory = range(NUM_YEARS).map(d =>
+    zip(totalCrewsHistory[d], placesGainedHisory[d]).map(d => {
+      return {
+        club: d[0].club,
+        count: d[0].count,
+        placesGained: d[1].placesGained,
+        points: d[1].placesGained / d[0].count,
+      };
+    })
+  );
+
+  const clubs = finalResultsHistory[2].map(d => d.club);
+
+  console.log(clubs);
+
+  const stats = clubs.map(d => ({
+    name: d,
+    points: finalResultsHistory.map(r =>
+      r.find(x => x.club === d) ? r.find(x => x.club === d).points : 0
+    ),
+  }));
+
+  console.log(JSON.stringify(stats));
+
+  console.log(finalResultsHistory);
 
   const finalResults = zip(totalCrews, placesGained).map(d => ({
     club: d[0].club,

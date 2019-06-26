@@ -28,7 +28,7 @@ export default ({ data }) => {
           </Description>
         </div>
         <div style={{ display: 'flex', justifyContent: 'center' }}>
-          <div style={{ maxWidth: '500px' }}>
+          <div style={{ width: '520px' }}>
             <BumpsChart data={data.resultsJson} />
           </div>
         </div>
