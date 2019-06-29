@@ -35,6 +35,7 @@ module.exports = {
         headers: {
           '/embed': [],
         },
+        mergeSecurityHeaders: true,
       },
     },
   ],
