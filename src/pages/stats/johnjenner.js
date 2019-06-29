@@ -158,18 +158,12 @@ export default ({ data }) => {
 
   const clubs = finalResultsHistory[2].map(d => d.club);
 
-  console.log(clubs);
-
   const stats = clubs.map(d => ({
     name: d,
     points: finalResultsHistory.map(r =>
       r.find(x => x.club === d) ? r.find(x => x.club === d).points : 0
     ),
   }));
-
-  console.log(JSON.stringify(stats));
-
-  console.log(finalResultsHistory);
 
   const finalResults = zip(totalCrews, placesGained).map(d => ({
     club: d[0].club,

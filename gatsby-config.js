@@ -33,9 +33,12 @@ module.exports = {
       resolve: `gatsby-plugin-netlify`,
       options: {
         headers: {
-          '/embed': [],
+          '/*': [
+            'X-XSS-Protection: 1; mode=block',
+            'X-Content-Type-Options: nosniff',
+          ],
         },
-        mergeSecurityHeaders: true,
+        mergeSecurityHeaders: false,
       },
     },
   ],
