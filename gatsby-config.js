@@ -29,6 +29,13 @@ module.exports = {
         exclude: [],
       },
     },
-    `gatsby-plugin-netlify`,
+    {
+      resolve: `gatsby-plugin-netlify`,
+      options: {
+        headers: {
+          '/embed': [],
+        },
+      },
+    },
   ],
 };
