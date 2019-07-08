@@ -61,7 +61,6 @@ const IndexPage = ({ data }) => {
             <CardHeader>
               <h2>Looking for historical results?</h2>
             </CardHeader>
-
             <CardBody>
               <CardText>
                 Take a trip back in time with historical results going back to
@@ -73,6 +72,23 @@ const IndexPage = ({ data }) => {
                 block
               >
                 Historical Bumps Charts
+              </StyledButton>
+            </CardBody>
+          </Card>
+          <Card className="text-center">
+            <CardHeader>
+              <h2>Posters</h2>
+            </CardHeader>
+            <CardBody>
+              <CardText>
+                Download PDF posters showing club's historical results and highlighting particular events
+              </CardText>
+              <StyledButton
+                color="primary"
+                onClick={() => navigate('/posters/')}
+                block
+              >
+                Download Posters
               </StyledButton>
             </CardBody>
           </Card>

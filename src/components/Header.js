@@ -67,6 +67,11 @@ class Header extends React.Component {
                   <HeaderLink>How Bumps Works</HeaderLink>
                 </NavLink>
               </NavItem>
+              <NavItem>
+                <NavLink tag={Link} to="/posters/">
+                  <HeaderLink>Posters</HeaderLink>
+                </NavLink>
+              </NavItem>
               <UncontrolledDropdown nav inNavbar>
                 <HeaderLink>
                   <DropdownToggle nav caret>
