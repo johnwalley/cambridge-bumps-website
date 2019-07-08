@@ -34,7 +34,6 @@ const IndexPage = ({ data }) => {
               <StyledButton
                 color="primary"
                 onClick={() => navigate('/latest/')}
-                outline
                 block
               >
                 Latest Results
@@ -69,6 +68,7 @@ const IndexPage = ({ data }) => {
               <StyledButton
                 color="primary"
                 onClick={() => navigate('/results/')}
+                outline
                 block
               >
                 Historical Bumps Charts
@@ -81,11 +81,13 @@ const IndexPage = ({ data }) => {
             </CardHeader>
             <CardBody>
               <CardText>
-                Download PDF posters showing club's historical results and highlighting particular events
+                Download PDF posters showing club's historical results and
+                highlighting particular events
               </CardText>
               <StyledButton
                 color="primary"
                 onClick={() => navigate('/posters/')}
+                outline
                 block
               >
                 Download Posters
