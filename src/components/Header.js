@@ -27,7 +27,7 @@ const StyledNavBar = styled(Navbar)`
 `;
 
 const HeaderLink = styled.h2`
-  font-size: 1.2rem;
+  font-size: 1.0rem;
   color: rgba(255, 255, 255, 0.5);
   margin-bottom: 0;
 `;
