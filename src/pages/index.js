@@ -3,13 +3,21 @@ import { navigate } from 'gatsby';
 import styled from 'styled-components';
 import {
   Card,
+  CardColumns,
   CardDeck,
   CardHeader,
+  CardImg,
   CardText,
+  CardTitle,
   CardBody,
   Button,
 } from 'reactstrap';
 import Layout from '../components/layout';
+import posters from "../images/posters.png" 
+import historical from "../images/historical.png" 
+import how from "../images/how.png" 
+import latest from "../images/latest.png" 
+
 
 const StyledButton = styled(Button)`
   font-family: Oswald, sans-serif;
@@ -20,16 +28,27 @@ const Content = styled.div`
   margin: 0 auto;
 `;
 
+const HeaderText = styled.h2`
+  margin-bottom: 0;
+`;
+
 const IndexPage = ({ data }) => {
   return (
     <Layout>
       <Content>
-        <CardDeck>
+        <CardColumns>
           <Card className="text-center">
             <CardHeader>
-              <h2>Looking for the latest results?</h2>
+              <HeaderText>Looking for the latest results?</HeaderText>
             </CardHeader>
+            <CardImg
+              top
+              width="100%"
+              src={latest}
+              alt="Latest results"
+            />
             <CardBody>
+              <CardTitle></CardTitle>
               <CardText>Live and most recent results</CardText>
               <StyledButton
                 color="primary"
@@ -42,8 +61,14 @@ const IndexPage = ({ data }) => {
           </Card>
           <Card className="text-center">
             <CardHeader>
-              <h2>New to Bumps?</h2>
+              <HeaderText>New to Bumps?</HeaderText>
             </CardHeader>
+            <CardImg
+              top
+              width="100%"
+              src={how}
+              alt="How Bumps works"
+            />
             <CardBody>
               <CardText>Read a short introduction to Bumps</CardText>
               <StyledButton
@@ -58,8 +83,14 @@ const IndexPage = ({ data }) => {
           </Card>
           <Card className="text-center">
             <CardHeader>
-              <h2>Looking for historical results?</h2>
+              <HeaderText>Looking for historical results?</HeaderText>
             </CardHeader>
+            <CardImg
+              top
+              width="100%"
+              src={historical}
+              alt="Historical Bumps charts"
+            />
             <CardBody>
               <CardText>
                 Take a trip back in time with historical results going back to
@@ -77,8 +108,14 @@ const IndexPage = ({ data }) => {
           </Card>
           <Card className="text-center">
             <CardHeader>
-              <h2>Posters</h2>
+              <HeaderText>Posters</HeaderText>
             </CardHeader>
+            <CardImg
+              top
+              width="100%"
+              src={posters}
+              alt="Posters"
+            />
             <CardBody>
               <CardText>
                 Download PDF posters showing club's historical results and
@@ -94,7 +131,7 @@ const IndexPage = ({ data }) => {
               </StyledButton>
             </CardBody>
           </Card>
-        </CardDeck>
+        </CardColumns>
       </Content>
     </Layout>
   );
