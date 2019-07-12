@@ -68,6 +68,8 @@ export default ({ data }) => {
     crew => crew.values[crew.values.length - 1].pos === 1
   );
 
+  if (crew === undefined) return null;
+
   const values = crew.values;
 
   const currentHeadOfTheRiverDaysHeld =
