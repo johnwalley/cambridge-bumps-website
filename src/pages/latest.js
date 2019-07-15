@@ -37,7 +37,7 @@ const ResultsPage = ({ data }) => {
                 <h2>Town Bumps</h2>
               </CardHeader>
               <CardBody>
-                <CardTitle>2018</CardTitle>
+                <CardTitle>2019</CardTitle>
                 <ButtonGroup>
                   <StyledButton
                     color="primary"
