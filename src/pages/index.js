@@ -8,16 +8,14 @@ import {
   CardHeader,
   CardImg,
   CardText,
-  CardTitle,
   CardBody,
   Button,
 } from 'reactstrap';
 import Layout from '../components/layout';
-import posters from "../images/posters.png" 
-import historical from "../images/historical.png" 
-import how from "../images/how.png" 
-import latest from "../images/latest.png" 
-
+import posters from '../images/posters.png';
+import historical from '../images/historical.png';
+import how from '../images/how.png';
+import latest from '../images/latest.png';
 
 const StyledButton = styled(Button)`
   font-family: Oswald, sans-serif;
@@ -32,6 +30,7 @@ const HeaderText = styled.h2`
   margin-bottom: 0;
 `;
 
+// TODO: Add links to cards other than latest
 const IndexPage = ({ data }) => {
   return (
     <Layout>
@@ -39,16 +38,14 @@ const IndexPage = ({ data }) => {
         <CardColumns>
           <Card className="text-center">
             <CardHeader>
-              <HeaderText>Looking for the latest results?</HeaderText>
+              <HeaderText>
+                <a href="/latest/">Looking for the latest results?</a>
+              </HeaderText>
             </CardHeader>
-            <CardImg
-              top
-              width="100%"
-              src={latest}
-              alt="Latest results"
-            />
+            <a href="/latest/">
+              <CardImg top width="100%" src={latest} alt="Latest results" />
+            </a>
             <CardBody>
-              <CardTitle></CardTitle>
               <CardText>Live and most recent results</CardText>
               <StyledButton
                 color="primary"
@@ -63,12 +60,7 @@ const IndexPage = ({ data }) => {
             <CardHeader>
               <HeaderText>New to Bumps?</HeaderText>
             </CardHeader>
-            <CardImg
-              top
-              width="100%"
-              src={how}
-              alt="How Bumps works"
-            />
+            <CardImg top width="100%" src={how} alt="How Bumps works" />
             <CardBody>
               <CardText>Read a short introduction to Bumps</CardText>
               <StyledButton
@@ -110,12 +102,7 @@ const IndexPage = ({ data }) => {
             <CardHeader>
               <HeaderText>Posters</HeaderText>
             </CardHeader>
-            <CardImg
-              top
-              width="100%"
-              src={posters}
-              alt="Posters"
-            />
+            <CardImg top width="100%" src={posters} alt="Posters" />
             <CardBody>
               <CardText>
                 Download PDF posters showing club's historical results and
