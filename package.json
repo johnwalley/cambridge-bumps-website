@@ -19,7 +19,7 @@
     "lodash": "4.17.15",
     "pdfkit": "^0.10.0",
     "react": "^16.8.6",
-    "react-bumps-chart": "^0.8.1",
+    "react-bumps-chart": "^1.0.0",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
     "react-rowing-blades": "^1.5.2",
