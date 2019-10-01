@@ -23,7 +23,7 @@
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
     "react-rowing-blades": "^1.5.2",
-    "react-sizes": "1",
+    "react-sizes": "2",
     "reactstrap": "8",
     "styled-components": "^4.3.1",
     "url-search-params-polyfill": "^6.0.0"
