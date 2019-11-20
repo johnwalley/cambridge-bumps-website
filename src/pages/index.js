@@ -1,5 +1,5 @@
 import React from 'react';
-import { navigate } from 'gatsby';
+import { Link, navigate } from 'gatsby';
 import styled from 'styled-components';
 import {
   Card,
@@ -38,12 +38,12 @@ const IndexPage = ({ data }) => {
           <Card className="text-center">
             <CardHeader>
               <HeaderText>
-                <a href="/latest/">Looking for the latest results?</a>
+                <Link to="/latest/">Looking for the latest results?</Link>
               </HeaderText>
             </CardHeader>
-            <a href="/latest/">
+            <Link to="/latest/">
               <CardImg top width="100%" src={latest} alt="Latest results" />
-            </a>
+            </Link>
             <CardBody>
               <CardText>Live and most recent results</CardText>
               <StyledButton
@@ -57,9 +57,13 @@ const IndexPage = ({ data }) => {
           </Card>
           <Card className="text-center">
             <CardHeader>
-              <HeaderText>New to Bumps?</HeaderText>
+              <HeaderText>
+                <Link to="/about/">New to Bumps?</Link>
+              </HeaderText>
             </CardHeader>
-            <CardImg top width="100%" src={how} alt="How Bumps works" />
+            <Link to="/about/">
+              <CardImg top width="100%" src={how} alt="How Bumps works" />
+            </Link>
             <CardBody>
               <CardText>Read a short introduction to Bumps</CardText>
               <StyledButton
@@ -74,14 +78,18 @@ const IndexPage = ({ data }) => {
           </Card>
           <Card className="text-center">
             <CardHeader>
-              <HeaderText>Looking for historical results?</HeaderText>
+              <HeaderText>
+                <Link to="/results/">Looking for historical results?</Link>
+              </HeaderText>
             </CardHeader>
-            <CardImg
-              top
-              width="100%"
-              src={historical}
-              alt="Historical Bumps charts"
-            />
+            <Link to="/results/">
+              <CardImg
+                top
+                width="100%"
+                src={historical}
+                alt="Historical Bumps charts"
+              />
+            </Link>
             <CardBody>
               <CardText>
                 Take a trip back in time with historical results going back to
@@ -99,9 +107,13 @@ const IndexPage = ({ data }) => {
           </Card>
           <Card className="text-center">
             <CardHeader>
-              <HeaderText>Posters</HeaderText>
+              <HeaderText>
+                <Link to="/posters/">Posters</Link>
+              </HeaderText>
             </CardHeader>
-            <CardImg top width="100%" src={posters} alt="Posters" />
+            <Link to="/posters/">
+              <CardImg top width="100%" src={posters} alt="Posters" />
+            </Link>
             <CardBody>
               <CardText>
                 Download PDF posters showing club's historical results and
