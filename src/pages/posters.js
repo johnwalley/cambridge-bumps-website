@@ -12,7 +12,10 @@ const PostersPage = () => {
     <Layout>
       <Content>
         <h1>Posters</h1>
-        <p>Download PDF posters showing club's historical results and highlighting particular events.</p>
+        <p>
+          Download PDF posters showing club's historical results and
+          highlighting particular events.
+        </p>
         <h2>Town Bumps</h2>
         <ul>
           <li>

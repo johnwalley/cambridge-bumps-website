@@ -14,7 +14,7 @@ const Description = styled.h3`
 
 export default ({ data, pathContext: { small } }) => {
   return null;
-  
+
   const results = data.allResultsJson.edges
     .filter(d => d.node.small === small)
     .map(d => d.node);
