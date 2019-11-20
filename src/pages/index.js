@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import {
   Card,
   CardColumns,
-  CardDeck,
   CardHeader,
   CardImg,
   CardText,

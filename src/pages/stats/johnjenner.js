@@ -3,18 +3,16 @@ import styled from 'styled-components';
 import { graphql } from 'gatsby';
 import Layout from '../../components/layout';
 import {
-  findLastIndex,
   sum,
   sumBy,
   sortBy,
-  uniq,
   flatten,
   groupBy,
   values,
   zip,
   range,
 } from 'lodash';
-import Blade, { shortShortNames, abbreviations } from 'react-rowing-blades';
+import { shortShortNames, abbreviations } from 'react-rowing-blades';
 
 const Description = styled.h3`
   font-size: 1.2rem;
@@ -116,7 +114,7 @@ export default ({ data }) => {
                     [0, 1, 2, 3].map(d =>
                       crew.values[crew.values.length - 2 - d - offset].pos ===
                         1 &&
-                      crew.values[crew.values.length - 1 - d - offset].pos == 1
+                      crew.values[crew.values.length - 1 - d - offset].pos === 1
                         ? 1
                         : crew.values[crew.values.length - 2 - d - offset].pos -
                           crew.values[crew.values.length - 1 - d - offset].pos
