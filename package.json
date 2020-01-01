@@ -17,7 +17,7 @@
     "gatsby-source-filesystem": "2.1.38",
     "gatsby-transformer-json": "2.2.20",
     "lodash": "4.17.15",
-    "pdfkit": "0.10.0",
+    "pdfkit": "0.11.0",
     "react": "16.12.0",
     "react-bumps-chart": "1.1.1",
     "react-dom": "16.12.0",
