@@ -16,8 +16,8 @@ export default ({ data, pathContext: { small } }) => {
   return null;
 
   const results = data.allResultsJson.edges
-    .filter(d => d.node.small === small)
-    .map(d => d.node);
+    .filter((d) => d.node.small === small)
+    .map((d) => d.node);
 
   let names;
   let abbr;
@@ -37,22 +37,22 @@ export default ({ data, pathContext: { small } }) => {
       names = shortShortNames.uk;
       abbr = Object.assign(
         {},
-        ...Object.values(abbreviations.uk).map(x => ({ [x]: x }))
+        ...Object.values(abbreviations.uk).map((x) => ({ [x]: x }))
       );
       break;
     default:
       throw new Error(`${data.resultsJson.set} not recognised as a set`);
   }
 
-  const getClubCode = crewName => {
+  const getClubCode = (crewName) => {
     const name = crewName.replace(/ ?\d+$/g, '');
 
-    let code = Object.keys(names).find(key => names[key] === abbr[name]);
+    let code = Object.keys(names).find((key) => names[key] === abbr[name]);
 
     // Couldn't find club code based on abbreviation
     // Search using full name instead
     if (!code) {
-      code = Object.keys(names).find(key => names[key] === name);
+      code = Object.keys(names).find((key) => names[key] === name);
     }
 
     if (!code) {
@@ -70,29 +70,29 @@ export default ({ data, pathContext: { small } }) => {
     return code;
   };
 
-  const getCurrentHeadOfTheRiverDaysHeld = results => {
+  const getCurrentHeadOfTheRiverDaysHeld = (results) => {
     const crew = results.crews.find(
-      crew => crew.values[crew.values.length - 1].pos === 1
+      (crew) => crew.values[crew.values.length - 1].pos === 1
     );
 
     const values = crew.values;
 
     return {
       name: crew.name,
-      daysHeld: values.length - 2 - findLastIndex(values, v => v.pos !== 1),
+      daysHeld: values.length - 2 - findLastIndex(values, (v) => v.pos !== 1),
     };
   };
 
-  const currentHeadOfTheRiverDaysHeld = results.map(r =>
+  const currentHeadOfTheRiverDaysHeld = results.map((r) =>
     getCurrentHeadOfTheRiverDaysHeld(r)
   );
 
   const headships = sortBy(
-    results[0].crews.map(crew => ({
+    results[0].crews.map((crew) => ({
       sum: sum(
         crew.valuesSplit
-          .map(v => v.values[v.values.length - 1].pos)
-          .filter(pos => pos === 1)
+          .map((v) => v.values[v.values.length - 1].pos)
+          .filter((pos) => pos === 1)
       ),
       name: crew.name,
     })),
@@ -100,7 +100,7 @@ export default ({ data, pathContext: { small } }) => {
   ).reverse();
 
   const biggestRisers = sortBy(
-    results[0].crews.map(crew => ({
+    results[0].crews.map((crew) => ({
       rise:
         crew.values[crew.values.length - 1 - 4].pos -
         crew.values[crew.values.length - 1].pos,
@@ -110,18 +110,18 @@ export default ({ data, pathContext: { small } }) => {
   ).reverse();
 
   const blades = sortBy(
-    results[0].crews.map(crew => ({
+    results[0].crews.map((crew) => ({
       blades: sum(
         crew.valuesSplit
           .map(
-            v =>
+            (v) =>
               v.values[1].pos < v.values[0].pos &&
               v.values[2].pos < v.values[1].pos &&
               v.values[3].pos < v.values[2].pos &&
               v.values[4].pos < v.values[3].pos
           )
-          .filter(v => v)
-          .map(v => (v ? 1 : 0))
+          .filter((v) => v)
+          .map((v) => (v ? 1 : 0))
       ),
       name: crew.name,
     })),
@@ -129,18 +129,18 @@ export default ({ data, pathContext: { small } }) => {
   ).reverse();
 
   const spoons = sortBy(
-    results[0].crews.map(crew => ({
+    results[0].crews.map((crew) => ({
       spoons: sum(
         crew.valuesSplit
           .map(
-            v =>
+            (v) =>
               v.values[1].pos > v.values[0].pos &&
               v.values[2].pos > v.values[1].pos &&
               v.values[3].pos > v.values[2].pos &&
               v.values[4].pos > v.values[3].pos
           )
-          .filter(v => v)
-          .map(v => (v ? 1 : 0))
+          .filter((v) => v)
+          .map((v) => (v ? 1 : 0))
       ),
       name: crew.name,
     })),

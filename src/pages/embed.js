@@ -60,7 +60,7 @@ const EmbedPage = ({ location }) => {
   `);
 
   const singleSetData = data.allLatestJson.edges.find(
-    edge =>
+    (edge) =>
       edge.node.small.toLowerCase() === set &&
       edge.node.gender.toLowerCase() === gender
   );

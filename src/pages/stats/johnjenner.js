@@ -23,8 +23,8 @@ const Description = styled.h3`
 
 export default ({ data }) => {
   const results = data.allResultsJson.edges
-    .filter(d => d.node.small === 'Town')
-    .map(d => d.node);
+    .filter((d) => d.node.small === 'Town')
+    .map((d) => d.node);
 
   let names;
   let abbr;
@@ -44,22 +44,22 @@ export default ({ data }) => {
       names = shortShortNames.uk;
       abbr = Object.assign(
         {},
-        ...Object.values(abbreviations.uk).map(x => ({ [x]: x }))
+        ...Object.values(abbreviations.uk).map((x) => ({ [x]: x }))
       );
       break;
     default:
       throw new Error(`${data.resultsJson.set} not recognised as a set`);
   }
 
-  const getClubCode = crewName => {
+  const getClubCode = (crewName) => {
     const name = crewName.replace(/ ?\d+$/g, '');
 
-    let code = Object.keys(names).find(key => names[key] === abbr[name]);
+    let code = Object.keys(names).find((key) => names[key] === abbr[name]);
 
     // Couldn't find club code based on abbreviation
     // Search using full name instead
     if (!code) {
-      code = Object.keys(names).find(key => names[key] === name);
+      code = Object.keys(names).find((key) => names[key] === name);
     }
 
     if (!code) {
@@ -82,17 +82,17 @@ export default ({ data }) => {
       values(
         groupBy(
           flatten(
-            results.map(event =>
+            results.map((event) =>
               event.crews
                 .filter(
-                  crew =>
+                  (crew) =>
                     crew.values[crew.values.length - 1 - offset].pos !== -1
                 )
-                .map(crew => crew.name.replace(/[0-9]+$/, '').trim())
+                .map((crew) => crew.name.replace(/[0-9]+$/, '').trim())
             )
           )
         )
-      ).map(d => ({ club: d[0], count: d.length })),
+      ).map((d) => ({ club: d[0], count: d.length })),
       'club'
     );
   };
@@ -102,16 +102,16 @@ export default ({ data }) => {
       Object.entries(
         groupBy(
           flatten(
-            results.map(event =>
+            results.map((event) =>
               event.crews
                 .filter(
-                  crew =>
+                  (crew) =>
                     crew.values[crew.values.length - 1 - offset].pos !== -1
                 )
-                .map(crew => ({
+                .map((crew) => ({
                   club: crew.name.replace(/[0-9]+$/, '').trim(),
                   placesGained: sum(
-                    [0, 1, 2, 3].map(d =>
+                    [0, 1, 2, 3].map((d) =>
                       crew.values[crew.values.length - 2 - d - offset].pos ===
                         1 &&
                       crew.values[crew.values.length - 1 - d - offset].pos === 1
@@ -125,7 +125,7 @@ export default ({ data }) => {
           ),
           'club'
         )
-      ).map(d => ({ club: d[0], placesGained: sumBy(d[1], 'placesGained') })),
+      ).map((d) => ({ club: d[0], placesGained: sumBy(d[1], 'placesGained') })),
       'club'
     );
   };
@@ -135,16 +135,16 @@ export default ({ data }) => {
 
   const NUM_YEARS = 20;
 
-  const totalCrewsHistory = range(NUM_YEARS).map(d =>
+  const totalCrewsHistory = range(NUM_YEARS).map((d) =>
     getTotalCrews(results, d * 5)
   );
 
-  const placesGainedHisory = range(NUM_YEARS).map(d =>
+  const placesGainedHisory = range(NUM_YEARS).map((d) =>
     getPlacesGained(results, d * 5)
   );
 
-  const finalResultsHistory = range(NUM_YEARS).map(d =>
-    zip(totalCrewsHistory[d], placesGainedHisory[d]).map(d => {
+  const finalResultsHistory = range(NUM_YEARS).map((d) =>
+    zip(totalCrewsHistory[d], placesGainedHisory[d]).map((d) => {
       return {
         club: d[0].club,
         count: d[0].count,
@@ -154,16 +154,16 @@ export default ({ data }) => {
     })
   );
 
-  const clubs = finalResultsHistory[2].map(d => d.club);
+  const clubs = finalResultsHistory[2].map((d) => d.club);
 
-  const stats = clubs.map(d => ({
+  const stats = clubs.map((d) => ({
     name: d,
-    points: finalResultsHistory.map(r =>
-      r.find(x => x.club === d) ? r.find(x => x.club === d).points : 0
+    points: finalResultsHistory.map((r) =>
+      r.find((x) => x.club === d) ? r.find((x) => x.club === d).points : 0
     ),
   }));
 
-  const finalResults = zip(totalCrews, placesGained).map(d => ({
+  const finalResults = zip(totalCrews, placesGained).map((d) => ({
     club: d[0].club,
     count: d[0].count,
     placesGained: d[1].placesGained,
@@ -185,7 +185,7 @@ export default ({ data }) => {
             <p>Best overall performance.</p>
             {sortBy(finalResults, 'points')
               .reverse()
-              .map(club => (
+              .map((club) => (
                 <p key={club.club}>
                   {club.club} (
                   {parseFloat(Math.round(club.points * 100) / 100).toFixed(2)})

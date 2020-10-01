@@ -36,9 +36,7 @@ class BumpsChart extends React.Component {
       .windowWidth(this.props.width)
       .on('selectYear', (start, end) => this.setState({ startYear: start }));
 
-    select(this.bumpsChart)
-      .datum(this.props.data)
-      .call(this.chart);
+    select(this.bumpsChart).datum(this.props.data).call(this.chart);
   }
 
   componentDidUpdate() {
@@ -54,14 +52,12 @@ class BumpsChart extends React.Component {
       .numYearsToView(numYearsToView)
       .windowWidth(this.props.width);
 
-    select(this.bumpsChart)
-      .datum(this.props.data)
-      .call(this.chart);
+    select(this.bumpsChart).datum(this.props.data).call(this.chart);
   }
 
   render() {
     return (
-      <Chart className="bumpsChart" ref={el => (this.bumpsChart = el)}>
+      <Chart className="bumpsChart" ref={(el) => (this.bumpsChart = el)}>
         <svg width="100%" preserveAspectRatio="xMidYMin" />
       </Chart>
     );

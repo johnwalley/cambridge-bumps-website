@@ -21,7 +21,7 @@ const TemplateWrapper = ({ children }) => (
         }
       }
     `}
-    render={data => (
+    render={(data) => (
       <>
         <Helmet
           title="Cambridge Bumps"
