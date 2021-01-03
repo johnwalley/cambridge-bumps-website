@@ -16,7 +16,7 @@
     "gatsby-plugin-styled-components": "3.3.12",
     "gatsby-source-filesystem": "2.3.0",
     "gatsby-transformer-json": "2.4.13",
-    "lodash": "4.17.19",
+    "lodash": "4.17.20",
     "pdfkit": "0.11.0",
     "react": "16.13.1",
     "react-bumps-chart": "1.1.1",
@@ -24,7 +24,7 @@
     "react-helmet": "5.2.1",
     "react-rowing-blades": "1.6.1",
     "react-sizes": "2.0.0",
-    "reactstrap": "8.6.0",
+    "reactstrap": "8.8.1",
     "styled-components": "4.4.1",
     "url-search-params-polyfill": "8.1.0"
   },
