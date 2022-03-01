@@ -86,7 +86,7 @@ const ResultsPage = ({ data }) => {
                 <h2>Lent Bumps</h2>
               </CardHeader>
               <CardBody>
-                <CardTitle>1950 - 2020</CardTitle>
+                <CardTitle>1950 - 2022</CardTitle>
                 <ButtonGroup>
                   <StyledButton
                     color="primary"
