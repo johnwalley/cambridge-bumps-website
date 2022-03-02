@@ -19,13 +19,13 @@
     "lodash": "4.17.21",
     "pdfkit": "0.11.0",
     "react": "16.13.1",
-    "react-bumps-chart": "1.1.1",
+    "react-bumps-chart": "1.1.2",
     "react-dom": "16.13.0",
     "react-helmet": "5.2.1",
     "react-rowing-blades": "1.6.4",
     "react-sizes": "2.0.0",
     "reactstrap": "8.9.0",
-    "styled-components": "4.4.1",
+    "styled-components": "5.3.3",
     "url-search-params-polyfill": "8.1.1"
   },
   "keywords": [
