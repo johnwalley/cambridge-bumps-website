@@ -110,7 +110,7 @@ const ResultsPage = ({ data }) => {
                 <h2>Torpids</h2>
               </CardHeader>
               <CardBody>
-                <CardTitle>2019</CardTitle>
+                <CardTitle>2022</CardTitle>
                 <ButtonGroup>
                   <StyledButton
                     color="primary"
